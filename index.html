@@ -58,6 +58,24 @@
 .app[data-real-bg="3"] h1,.app[data-real-bg="6"] h1,.app[data-real-bg="3"] p,.app[data-real-bg="6"] p{text-shadow:0 2px 10px #102d5666;color:#fff}
 .app[data-real-bg="3"] footer,.app[data-real-bg="6"] footer{color:#fff;text-shadow:0 2px 8px #09254e88}
 .asset-option[data-kind="background"][data-id="3"] img,.asset-option[data-kind="background"][data-id="6"] img{object-fit:cover}
+</style><style id="bright-fresh-v1">
+/* Brighter overall presentation, less dark overlay, crisp shadows */
+.app{--txt:#08449d;--muted:#3172ac;--panel:#ffffffb8;--border:#ffffffc9}
+.app[data-theme="1"]{--txt:#fff;--muted:#ecfaff}
+.app[data-theme="3"]{--txt:#fff;--muted:#f5fff2}
+.app[data-theme="4"]{--txt:#fff;--muted:#f5edff}
+.app[data-theme="2"],.app[data-theme="5"],.app[data-theme="6"]{--txt:#0752a4;--muted:#326fa5}
+.app[data-real-bg="3"]{background-image:url("https://images.unsplash.com/photo-1689916122850-d8c7adb9de85?auto=format&fit=crop&w=1080&q=90")!important}
+.app[data-real-bg="6"]{background-image:url("https://images.unsplash.com/photo-1572994384812-d66fea58513f?auto=format&fit=crop&w=1080&q=90")!important}
+.app[data-real-bg="3"] h1,.app[data-real-bg="6"] h1{color:#fff;text-shadow:0 2px 8px #124d7466}
+.app[data-real-bg="3"] p,.app[data-real-bg="6"] p{color:#fff;text-shadow:0 1px 5px #124d7466}
+.app[data-real-bg="3"] .theme-toggle,.app[data-real-bg="6"] .theme-toggle{background:#ffffffc7;color:#0863b5}
+.app[data-real-bg="3"] footer,.app[data-real-bg="6"] footer{color:#fff}
+.brand img{filter:drop-shadow(0 6px 9px #176fbc33)!important}
+.launch{box-shadow:0 7px 18px #0b76c12b!important;filter:saturate(1.12)}
+.app[data-button="4"] .launch{box-shadow:0 4px 18px #b34dff66!important}
+.app[data-theme="2"] .theme-toggle,.app[data-theme="5"] .theme-toggle,.app[data-theme="6"] .theme-toggle{background:#ffffffbb}
+.sheet{background:#fff}
 </style></head>
 <body>
 <main class="app" id="app" data-theme="2">
@@ -138,5 +156,17 @@ document.querySelectorAll('.asset-option[data-kind="background"]').forEach(funct
 }
 sync();
 document.getElementById('backgroundOptions').addEventListener('click',function(){requestAnimationFrame(sync)});
+})();
+</script><script>
+(function(){
+var app=document.getElementById('app');
+function refresh(){
+var bg='2';try{bg=localStorage.getItem('git-roosee-background')||localStorage.getItem('git-roosee-theme')||'2'}catch(e){}
+app.dataset.realBg=bg;
+var photos={'3':'https://images.unsplash.com/photo-1689916122850-d8c7adb9de85?auto=format&fit=crop&w=1080&q=90','6':'https://images.unsplash.com/photo-1572994384812-d66fea58513f?auto=format&fit=crop&w=1080&q=90'};
+if(photos[bg])app.style.setProperty('--wallpaper','url("'+photos[bg]+'")');
+}
+refresh();
+document.getElementById('backgroundOptions').addEventListener('click',function(){requestAnimationFrame(refresh)});
 })();
 </script></body></html>
