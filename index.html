@@ -47,6 +47,10 @@
 .center{position:relative;z-index:1}
 .theme-toggle{backdrop-filter:blur(10px);box-shadow:0 3px 12px #053b9a18}
 @media(max-width:380px){.launch{font-size:16px}.brand{width:102px;height:102px}}
+</style><link rel="stylesheet" href="assets/buttons/buttons.css"><style>
+.app{background-image:var(--wallpaper)!important;background-size:cover!important;background-position:center!important}.app:before,.app:after,.scene-art{display:none!important}
+.brand{background:none!important;box-shadow:none!important;border:0!important;width:126px;height:126px;border-radius:0}.brand b{display:none}.brand img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 14px #003b9240)}
+.sheet{max-height:83dvh;overflow-y:auto}.library-section{margin:15px 0}.library-section h3{font-size:14px;margin:0 0 9px}.asset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.asset-option{background:#fff;border:2px solid #e3eaf3;border-radius:13px;padding:6px;color:#304963;font-size:11px;font-weight:700;cursor:pointer;min-width:0}.asset-option.selected{border-color:#087afa;background:#edf6ff}.asset-option img{display:block;width:100%;height:70px;object-fit:cover;border-radius:8px;margin-bottom:5px}.asset-option.logo-option img{object-fit:contain;background:#eaf5ff}.button-swatch{height:48px;display:flex;align-items:center;justify-content:center;border-radius:25px;margin-bottom:6px;font-size:12px;box-shadow:0 4px 9px #0954a522}
 </style></head>
 <body>
 <main class="app" id="app" data-theme="2">
@@ -59,14 +63,14 @@
 <svg class="art6" viewBox="0 0 400 850" preserveAspectRatio="xMidYMid slice"><g fill="#fff" opacity=".4"><ellipse cx="85" cy="170" rx="110" ry="35"/><ellipse cx="310" cy="120" rx="130" ry="40"/></g><path d="M-40 700L55 640 130 700 230 605 340 695 440 625V900H-40Z" fill="#b3d9f7"/><path d="M-40 750L75 700 145 745 260 665 340 745 440 690V900H-40Z" fill="#82bde9" opacity=".7"/><path d="M-40 805L90 740 160 790 270 730 350 800 440 760V900H-40Z" fill="#4a9cd7" opacity=".7"/></svg>
 </div><div class="top"><button class="theme-toggle" id="openTheme" aria-label="Thay đổi giao diện" title="Thay đổi giao diện"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="9" r="1.3"/><circle cx="13" cy="6.5" r="1.3"/><circle cx="17" cy="11" r="1.3"/><path d="M12 21a3 3 0 0 1-2-5c2-2 4 0 5-1s1-3 3-3"/></svg></button></div>
 <div class="center">
-<div class="brand" aria-label="ROOSEE"><b>ROOSEE</b></div>
+<div class="brand" aria-label="ROOSEE"><img id="brandImage" src="assets/logos/logo-02.svg" alt="ROOSEE"></div>
 <h1>ROOSEE</h1>
 <p>Intelligent Network</p>
 <a class="launch" href="https://zalo.me/s/2764945754716315536/?utm_source=zalo-qr"><span class="zalo">Zalo</span><span>Mở ROOSEE</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></a>
 </div>
 <footer>GIT ROOSEE Mobile</footer>
 </main>
-<div class="picker" id="picker" role="dialog" aria-modal="true" aria-labelledby="pickerTitle"><div class="sheet"><div class="sheet-head"><h2 id="pickerTitle">Chọn giao diện</h2><button class="close" id="closeTheme" aria-label="Đóng">×</button></div><div class="themes" id="themes">
+<div class="picker" id="picker" role="dialog" aria-modal="true" aria-labelledby="pickerTitle"><div class="sheet"><div class="sheet-head"><h2 id="pickerTitle">Thư viện giao diện</h2><button class="close" id="closeTheme" aria-label="Đóng">×</button></div><div class="library-section"><h3>Ảnh nền</h3><div class="asset-grid" id="backgroundOptions"></div></div><div class="library-section"><h3>Kiểu nút bấm</h3><div class="asset-grid" id="buttonOptions"></div></div><div class="library-section"><h3>Logo 3D</h3><div class="asset-grid" id="logoOptions"></div></div><div class="themes" id="themes" style="display:none">
 <button class="theme" data-id="1"><span class="swatch" style="background:linear-gradient(145deg,#003cba,#05b6ff)"><i></i></span><span class="theme-name">01 · Công nghệ</span></button>
 <button class="theme" data-id="2"><span class="swatch" style="background:linear-gradient(145deg,#fff,#b4e4ff)"><i style="background:#0781ff"></i></span><span class="theme-name">02 · Tối giản</span></button>
 <button class="theme" data-id="3"><span class="swatch" style="background:linear-gradient(145deg,#b7ef9e,#12a83d)"><i></i></span><span class="theme-name">03 · Tươi mát</span></button>
@@ -86,4 +90,33 @@ themes.addEventListener('click',e=>{const b=e.target.closest('button[data-id]');
 document.addEventListener('keydown',e=>{if(e.key==='Escape')picker.classList.remove('open')});
 })();
 </script>
-</body></html>
+<script>
+(function(){
+var app=document.getElementById('app');
+var titles=['Công nghệ','Tối giản','Tươi mát','Neon','Năng động','Xanh trời'];
+function get(k){try{return localStorage.getItem('git-roosee-'+k)}catch(e){return null}}
+function put(k,v){try{localStorage.setItem('git-roosee-'+k,v)}catch(e){}}
+function safe(v){var n=Number(v);return n>=1&&n<=6?n:2}
+function path(folder,n){return 'assets/'+folder+'/'+(folder==='backgrounds'?'bg-':'logo-')+String(n).padStart(2,'0')+'.svg'}
+function apply(){
+ var bg=safe(get('background')||get('theme')||2),btn=safe(get('button')||get('theme')||2),logo=safe(get('logo')||get('theme')||2);
+ app.style.setProperty('--wallpaper','url("'+path('backgrounds',bg)+'")');
+ app.dataset.button=String(btn);
+ document.getElementById('brandImage').src=path('logos',logo);
+ document.querySelectorAll('.asset-option').forEach(function(b){b.classList.toggle('selected',Number(b.dataset.id)==={background:bg,button:btn,logo:logo}[b.dataset.kind])});
+}
+[['background','backgroundOptions','backgrounds'],['button','buttonOptions','buttons'],['logo','logoOptions','logos']].forEach(function(info){
+ var kind=info[0],root=document.getElementById(info[1]),folder=info[2];
+ for(var n=1;n<=6;n++){
+  var b=document.createElement('button');b.type='button';b.className='asset-option'+(kind==='logo'?' logo-option':'');b.dataset.kind=kind;b.dataset.id=String(n);
+  if(kind==='button'){
+   var colors=[['#fff','#e8f9ff','#0751ae'],['#009aff','#0657fa','#fff'],['#fafffa','#e8ffec','#07843d'],['#f71ff3','#0877ff','#fff'],['#ffa900','#ff5800','#fff'],['#36c3ff','#0064ff','#fff']][n-1];
+   var sw=document.createElement('div');sw.className='button-swatch';sw.style.background='linear-gradient(100deg,'+colors[0]+','+colors[1]+')';sw.style.color=colors[2];sw.textContent='Mở ROOSEE';b.appendChild(sw);
+  }else{var img=document.createElement('img');img.loading='lazy';img.alt=titles[n-1];img.src=path(folder,n);b.appendChild(img)}
+  var label=document.createElement('span');label.textContent=String(n).padStart(2,'0')+' · '+titles[n-1];b.appendChild(label);
+  b.addEventListener('click',function(){put(this.dataset.kind,this.dataset.id);apply()});root.appendChild(b);
+ }
+});
+apply();
+})();
+</script></body></html>
