@@ -51,6 +51,13 @@
 .app{background-image:var(--wallpaper)!important;background-size:cover!important;background-position:center!important}.app:before,.app:after,.scene-art{display:none!important}
 .brand{background:none!important;box-shadow:none!important;border:0!important;width:126px;height:126px;border-radius:0}.brand b{display:none}.brand img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 14px #003b9240)}
 .sheet{max-height:83dvh;overflow-y:auto}.library-section{margin:15px 0}.library-section h3{font-size:14px;margin:0 0 9px}.asset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.asset-option{background:#fff;border:2px solid #e3eaf3;border-radius:13px;padding:6px;color:#304963;font-size:11px;font-weight:700;cursor:pointer;min-width:0}.asset-option.selected{border-color:#087afa;background:#edf6ff}.asset-option img{display:block;width:100%;height:70px;object-fit:cover;border-radius:8px;margin-bottom:5px}.asset-option.logo-option img{object-fit:contain;background:#eaf5ff}.button-swatch{height:48px;display:flex;align-items:center;justify-content:center;border-radius:25px;margin-bottom:6px;font-size:12px;box-shadow:0 4px 9px #0954a522}
+</style><style id="real-assets-2026">
+.app[data-real-bg="3"]{background-image:linear-gradient(180deg,#032a1833,#063c2760),url("https://images.unsplash.com/photo-1689916122850-d8c7adb9de85?auto=format&fit=crop&w=1080&q=85")!important}
+.app[data-real-bg="6"]{background-image:linear-gradient(180deg,#ffffff10,#19589a38),url("https://images.unsplash.com/photo-1572994384812-d66fea58513f?auto=format&fit=crop&w=1080&q=85")!important}
+.app[data-real-bg="3"] .theme-toggle,.app[data-real-bg="6"] .theme-toggle{background:#ffffff40}
+.app[data-real-bg="3"] h1,.app[data-real-bg="6"] h1,.app[data-real-bg="3"] p,.app[data-real-bg="6"] p{text-shadow:0 2px 10px #102d5666;color:#fff}
+.app[data-real-bg="3"] footer,.app[data-real-bg="6"] footer{color:#fff;text-shadow:0 2px 8px #09254e88}
+.asset-option[data-kind="background"][data-id="3"] img,.asset-option[data-kind="background"][data-id="6"] img{object-fit:cover}
 </style></head>
 <body>
 <main class="app" id="app" data-theme="2">
@@ -118,5 +125,18 @@ function apply(){
  }
 });
 apply();
+})();
+</script><script>
+(function(){
+var photos={3:"https://images.unsplash.com/photo-1689916122850-d8c7adb9de85?auto=format&fit=crop&w=1080&q=85",6:"https://images.unsplash.com/photo-1572994384812-d66fea58513f?auto=format&fit=crop&w=1080&q=85"};
+var app=document.getElementById('app');
+function sync(){
+var bg=2;try{bg=Number(localStorage.getItem('git-roosee-background')||localStorage.getItem('git-roosee-theme')||2)}catch(e){}
+app.dataset.realBg=String(bg);
+if(photos[bg])app.style.setProperty('--wallpaper','linear-gradient(180deg,#ffffff12,#173c6738),url("'+photos[bg]+'")');
+document.querySelectorAll('.asset-option[data-kind="background"]').forEach(function(b){var id=Number(b.dataset.id);if(photos[id]){var img=b.querySelector('img');if(img)img.src=photos[id]}})
+}
+sync();
+document.getElementById('backgroundOptions').addEventListener('click',function(){requestAnimationFrame(sync)});
 })();
 </script></body></html>
