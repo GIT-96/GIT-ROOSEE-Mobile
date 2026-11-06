@@ -19,6 +19,9 @@ public class MainActivity extends Activity {
   getWindow().getDecorView().setSystemUiVisibility(5894 | 1024 | 512);
   web = new WebView(this);
   web.setBackgroundColor(0xfff0faff);
+  web.setVerticalScrollBarEnabled(false);
+  web.setHorizontalScrollBarEnabled(false);
+  web.setOverScrollMode(View.OVER_SCROLL_NEVER);
   web.getSettings().setJavaScriptEnabled(true);
   web.getSettings().setDomStorageEnabled(true);
   web.getSettings().setAllowFileAccess(false);
