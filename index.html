@@ -17,6 +17,23 @@ html,body{background:#f0faff!important}
 .app:not(.custom-bg) .launch:not(.override){background:linear-gradient(105deg,#007bff,#03c2ff 52%,#0865f5)!important;color:#fff!important}
 .app:not(.custom-bg) .palette{background:#ffffff!important;color:#0754b5!important}
 .sheet{color:#153d73!important;background:#fff!important}
+</style><style id="fixed-mobile-viewport">
+html,body{height:100%;height:100dvh;overflow:hidden!important;overscroll-behavior:none!important;touch-action:pan-x}
+.app{height:100dvh!important;min-height:0!important;max-height:100dvh!important;overflow:hidden!important;overscroll-behavior:none!important;padding-top:calc(env(safe-area-inset-top) + clamp(45px,7dvh,85px))!important;padding-bottom:calc(env(safe-area-inset-bottom) + 12px)!important;justify-content:space-between!important}
+.hero{flex:0 1 auto;min-height:0}
+.globe{width:min(82vw,38dvh,350px)!important;height:min(82vw,38dvh,350px)!important;margin-top:0!important}
+.logo{width:40%!important;height:40%!important;border-radius:24%}
+.logo span{font-size:clamp(54px,10dvh,92px)!important}
+h1{font-size:clamp(32px,5.7dvh,59px)!important}
+.sub{font-size:clamp(15px,2.6dvh,24px)!important;margin-top:4px!important}
+.rule{margin-top:clamp(6px,1.4dvh,20px)!important}
+.launch{min-height:clamp(49px,7dvh,67px)!important;margin-top:clamp(13px,3dvh,37px)!important}
+.features{flex:0 0 auto;margin:clamp(8px,2dvh,24px) auto clamp(7px,3dvh,28px)!important}
+.feature-icon{height:clamp(40px,6dvh,54px)!important;width:clamp(40px,6dvh,54px)!important;margin-bottom:6px!important}
+.feature-icon svg{width:65%!important;height:65%!important}
+.sheet-backdrop{touch-action:auto;overscroll-behavior:contain}
+.sheet{overscroll-behavior:contain}
+@media(max-height:620px){.globe{width:min(64vw,30dvh)!important;height:min(64vw,30dvh)!important}.features{margin:4px auto!important}.feature{font-size:10px}.launch{margin-top:8px!important}}
 </style></head><body>
 <main class="app" id="app">
 <div class="scene" aria-hidden="true"><svg viewBox="0 0 400 900" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="wave" x2="1" y2="1"><stop stop-color="#15d9ff"/><stop offset=".5" stop-color="#0289fa"/><stop offset="1" stop-color="#a9eaff"/></linearGradient></defs><path d="M-60 185Q150 105 260-40H430V-70H-60Z" fill="#c2e8ff" opacity=".7"/><path d="M-60 240Q170 135 300-40H430V-70H-60Z" fill="#8cd3ff" opacity=".4"/><path d="M-50 790Q100 745 220 815T450 775V960H-50Z" fill="#a8e4ff" opacity=".6"/><path d="M-50 820Q80 770 230 835T450 790V960H-50Z" fill="url(#wave)" opacity=".75"/><path d="M-50 860Q90 790 235 860T450 825V960H-50Z" fill="#65c9ff" opacity=".6"/><path d="M-50 803Q90 748 220 818T450 773" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/></svg></div>
