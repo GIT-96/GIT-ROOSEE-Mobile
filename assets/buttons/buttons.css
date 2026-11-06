@@ -1,0 +1,10 @@
+/* Reusable button library: select via data-button="1".."6" */
+.launch{--btn-from:#fff;--btn-to:#e8f9ff;--btn-text:#0751ae;background:linear-gradient(100deg,var(--btn-from),var(--btn-to))!important;color:var(--btn-text)!important;border:1px solid #ffffffa8;box-shadow:0 12px 25px #0055a542, inset 0 1px #ffffff99}
+.app[data-button="1"] .launch{--btn-from:#fff;--btn-to:#e8f9ff;--btn-text:#0751ae}
+.app[data-button="2"] .launch{--btn-from:#009aff;--btn-to:#0657fa;--btn-text:#fff}
+.app[data-button="3"] .launch{--btn-from:#fafffa;--btn-to:#e8ffec;--btn-text:#07843d}
+.app[data-button="4"] .launch{--btn-from:#f71ff3;--btn-to:#0877ff;--btn-text:#fff;box-shadow:0 0 24px #eb1cf58c}
+.app[data-button="5"] .launch{--btn-from:#ffa900;--btn-to:#ff5800;--btn-text:#fff}
+.app[data-button="6"] .launch{--btn-from:#36c3ff;--btn-to:#0064ff;--btn-text:#fff}
+.app[data-button="2"] .zalo,.app[data-button="4"] .zalo,.app[data-button="5"] .zalo,.app[data-button="6"] .zalo{background:white;color:#086bfa}
+.app[data-button="1"] .zalo,.app[data-button="3"] .zalo{background:#086bfa;color:white}
