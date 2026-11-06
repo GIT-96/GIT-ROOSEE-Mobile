@@ -3,37 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f7fbff">
-<meta name="description" content="Mở ROOSEE Intelligent Network trên Zalo">
-<title>GIT ROOSEE</title>
+<meta name="theme-color" content="#0969e8">
+<meta name="description" content="GIT ROOSEE Mobile — mở ROOSEE trên Zalo">
+<title>GIT ROOSEE Mobile</title>
 <style>
-:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#142744;background:#f7fbff}
-*{box-sizing:border-box}
-body{margin:0;min-height:100dvh;background:radial-gradient(circle at 50% 33%,#e0f2ff 0%,#f7fbff 49%,#fff 100%)}
-main{width:min(100%,460px);min-height:100dvh;margin:auto;padding:calc(28px + env(safe-area-inset-top)) 24px calc(26px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;justify-content:center}
-.mark{position:relative;width:112px;height:112px;border-radius:28px;background:linear-gradient(145deg,#42c2c9,#168d9f);display:grid;place-items:center;box-shadow:0 16px 32px #118caa33, inset 0 1px #ffffff80;transform:translateY(-9px)}
-.mark:before{content:"";position:absolute;inset:-13px;border:1px solid #a7dfff;border-radius:37px}
-.mark b{color:white;font-size:27px;font-style:italic;letter-spacing:-2px;transform:skew(-7deg)}
-h1{font-size:25px;line-height:1.3;text-align:center;margin:25px 0 7px;font-weight:800;letter-spacing:-.6px}
-p{margin:0;color:#7b8ca5;font-size:14px;text-align:center}
-a.launch{display:flex;align-items:center;justify-content:center;gap:11px;width:100%;max-width:340px;min-height:60px;margin-top:40px;background:linear-gradient(110deg,#0769f0,#078bff);color:white;border-radius:17px;font-size:18px;font-weight:750;text-decoration:none;box-shadow:0 11px 25px #117af542;transition:transform .15s}
-a.launch:active{transform:scale(.98)}
-a.launch svg{width:22px;height:22px}
-a.launch:focus-visible{outline:3px solid #f4a62a;outline-offset:3px}
-footer{position:absolute;bottom:calc(25px + env(safe-area-inset-bottom));font-size:12px;color:#a0afc5}
-@media(max-height:500px){main{min-height:500px}footer{position:static;margin-top:45px}}
+*{box-sizing:border-box}html,body{min-height:100%;margin:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}.app{--a:#0063df;--b:#03d9f4;--txt:#fff;--muted:#dcefff;--btnbg:#fff;--btntxt:#0752bb;--panel:#ffffff22;--border:#ffffff50;min-height:100dvh;color:var(--txt);background:linear-gradient(145deg,var(--a),var(--b));position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:calc(60px + env(safe-area-inset-top)) 22px calc(60px + env(safe-area-inset-bottom));isolation:isolate;transition:background .25s,color .25s}
+.app:before{content:"";position:absolute;width:440px;height:440px;border:1px solid var(--border);border-radius:50%;top:-240px;right:-220px;box-shadow:0 0 0 55px #ffffff08,0 0 0 115px #ffffff08;z-index:-1}
+.app:after{content:"";position:absolute;width:160%;height:180px;left:-30%;bottom:-90px;background:linear-gradient(135deg,transparent 25%,#ffffff30 50%,transparent 75%);transform:rotate(-8deg);border-radius:50%;z-index:-1}
+.top{position:absolute;top:calc(16px + env(safe-area-inset-top));right:17px}.theme-toggle{border:1px solid var(--border);background:var(--panel);color:var(--txt);border-radius:50%;width:46px;height:46px;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px)}.theme-toggle svg{width:23px;height:23px}.center{width:min(100%,420px);display:flex;align-items:center;flex-direction:column;text-align:center}.brand{height:112px;width:112px;border-radius:29px;background:linear-gradient(145deg,#14c5d3,#0056bd);display:grid;place-items:center;box-shadow:0 15px 38px #003f8a50,inset 0 2px #ffffff60;border:1px solid #ffffff55;margin-bottom:26px}.brand b{color:white;font-size:27px;letter-spacing:-2px;font-style:italic;transform:skew(-7deg)}h1{font-size:clamp(29px,7vw,36px);font-style:italic;letter-spacing:-1.5px;margin:0;font-weight:900}p{margin:5px 0 0;color:var(--muted);font-size:16px}.launch{width:100%;max-width:355px;margin-top:56px;border-radius:40px;min-height:62px;background:var(--btnbg);color:var(--btntxt);display:flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;font-weight:800;font-size:17px;box-shadow:0 12px 26px #003c8940;transition:transform .15s}.launch:active{transform:scale(.97)}.zalo{width:35px;height:35px;display:grid;place-items:center;border-radius:50%;background:#087cfa;color:white;font-size:12px;font-weight:800}.launch svg{width:19px;height:19px}footer{position:absolute;bottom:calc(19px + env(safe-area-inset-bottom));font-size:12px;opacity:.75}.picker{position:fixed;inset:0;background:#071c3a77;display:none;align-items:flex-end;justify-content:center;z-index:10}.picker.open{display:flex}.sheet{background:#fff;color:#162b48;border-radius:25px 25px 0 0;width:min(100%,500px);padding:22px 19px calc(22px + env(safe-area-inset-bottom));box-shadow:0 -15px 50px #001d5a44}.sheet-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.sheet h2{font-size:19px;margin:0}.close{background:#edf3fa;border:0;width:36px;height:36px;border-radius:50%;font-size:22px;color:#3d5878}.themes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.theme{border:2px solid #e5eaf1;background:#fff;border-radius:15px;padding:7px 6px 10px;cursor:pointer;color:#334155;font:inherit;font-size:12px}.theme.active{border-color:#0079f8;background:#f1f8ff}.swatch{display:block;height:78px;border-radius:10px;margin-bottom:8px;position:relative;overflow:hidden}.swatch:before{content:"ROOSEE";position:absolute;top:27px;left:0;right:0;color:#fff;font-size:12px;font-weight:900;font-style:italic;text-align:center}.theme:nth-child(2) .swatch:before,.theme:nth-child(5) .swatch:before,.theme:nth-child(6) .swatch:before{color:#073e9e}.swatch i{position:absolute;bottom:7px;left:24%;right:24%;height:7px;background:#ffffffb0;border-radius:20px}.theme-name{display:block;font-weight:650;line-height:1.3}
+.app[data-theme="1"]{--a:#003cba;--b:#05b6ff;--txt:#fff;--muted:#e6f8ff;--btnbg:#fff;--btntxt:#0749aa}
+.app[data-theme="2"]{--a:#ffffff;--b:#d5f0ff;--txt:#07347e;--muted:#466b9d;--btnbg:#0879fa;--btntxt:#fff;--panel:#ffffffaa;--border:#75c7ff88}
+.app[data-theme="3"]{--a:#b7ef9e;--b:#12a83d;--txt:#fff;--muted:#edffeb;--btnbg:#fff;--btntxt:#116c2e;--panel:#ffffff33;--border:#d4ffca}
+.app[data-theme="4"]{--a:#1d075a;--b:#a213ec;--txt:#fff;--muted:#f4dfff;--btnbg:linear-gradient(100deg,#e42efb,#177fff);--btntxt:#fff;--panel:#ffffff22;--border:#c77aff88}
+.app[data-theme="5"]{--a:#fff5e5;--b:#ffc56b;--txt:#073a83;--muted:#7e6b63;--btnbg:linear-gradient(90deg,#ff8b06,#ff5b0b);--btntxt:#fff;--panel:#ffffff99;--border:#ffca8c}
+.app[data-theme="6"]{--a:#b2dfff;--b:#f4fbff;--txt:#073f96;--muted:#477ab3;--btnbg:#087bfa;--btntxt:#fff;--panel:#ffffffa8;--border:#ffffffaa}
+.app[data-theme="3"] h1{color:#fff;text-shadow:0 2px 9px #0a7a3e55}
+@media(min-width:650px){.app{max-width:600px;margin:auto;box-shadow:0 0 50px #102b5b22}}
+@media(max-height:530px){.app{min-height:530px}.launch{margin-top:28px}}
 </style>
 </head>
 <body>
-<main>
-<div class="mark" aria-label="ROOSEE"><b>ROOSEE</b></div>
-<h1>ROOSEE Intelligent Network</h1>
-<p>Truy cập hệ thống trên Zalo</p>
-<a class="launch" href="https://zalo.me/s/2764945754716315536/?utm_source=zalo-qr" aria-label="Mở ROOSEE trong Zalo">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v16h-6"/><path d="M3 12h13m-5-5 5 5-5 5"/></svg>
-Mở ROOSEE
-</a>
+<main class="app" id="app" data-theme="2">
+<div class="top"><button class="theme-toggle" id="openTheme" aria-label="Thay đổi giao diện" title="Thay đổi giao diện"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="9" r="1.3"/><circle cx="13" cy="6.5" r="1.3"/><circle cx="17" cy="11" r="1.3"/><path d="M12 21a3 3 0 0 1-2-5c2-2 4 0 5-1s1-3 3-3"/></svg></button></div>
+<div class="center">
+<div class="brand" aria-label="ROOSEE"><b>ROOSEE</b></div>
+<h1>ROOSEE</h1>
+<p>Intelligent Network</p>
+<a class="launch" href="https://zalo.me/s/2764945754716315536/?utm_source=zalo-qr"><span class="zalo">Zalo</span><span>Mở ROOSEE</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></a>
+</div>
 <footer>GIT ROOSEE Mobile</footer>
 </main>
-</body>
-</html>
+<div class="picker" id="picker" role="dialog" aria-modal="true" aria-labelledby="pickerTitle"><div class="sheet"><div class="sheet-head"><h2 id="pickerTitle">Chọn giao diện</h2><button class="close" id="closeTheme" aria-label="Đóng">×</button></div><div class="themes" id="themes">
+<button class="theme" data-id="1"><span class="swatch" style="background:linear-gradient(145deg,#003cba,#05b6ff)"><i></i></span><span class="theme-name">01 · Công nghệ</span></button>
+<button class="theme" data-id="2"><span class="swatch" style="background:linear-gradient(145deg,#fff,#b4e4ff)"><i style="background:#0781ff"></i></span><span class="theme-name">02 · Tối giản</span></button>
+<button class="theme" data-id="3"><span class="swatch" style="background:linear-gradient(145deg,#b7ef9e,#12a83d)"><i></i></span><span class="theme-name">03 · Tươi mát</span></button>
+<button class="theme" data-id="4"><span class="swatch" style="background:linear-gradient(145deg,#1d075a,#a213ec)"><i></i></span><span class="theme-name">04 · Neon</span></button>
+<button class="theme" data-id="5"><span class="swatch" style="background:linear-gradient(145deg,#fff5e5,#ffc56b)"><i style="background:#ff7900"></i></span><span class="theme-name">05 · Năng động</span></button>
+<button class="theme" data-id="6"><span class="swatch" style="background:linear-gradient(145deg,#b2dfff,#f4fbff)"><i style="background:#087bfa"></i></span><span class="theme-name">06 · Xanh trời</span></button>
+</div></div></div>
+<script>
+(function(){
+const app=document.getElementById('app'),picker=document.getElementById('picker'),themes=document.getElementById('themes');
+function choose(id){if(!/^[1-6]$/.test(id))id='2';app.dataset.theme=id;document.querySelectorAll('.theme').forEach(b=>{const selected=b.dataset.id===id;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected))});try{localStorage.setItem('git-roosee-theme',id)}catch(e){}picker.classList.remove('open')}
+let saved='2';try{saved=localStorage.getItem('git-roosee-theme')||'2'}catch(e){}choose(saved);
+document.getElementById('openTheme').addEventListener('click',()=>picker.classList.add('open'));
+document.getElementById('closeTheme').addEventListener('click',()=>picker.classList.remove('open'));
+picker.addEventListener('click',e=>{if(e.target===picker)picker.classList.remove('open')});
+themes.addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(b)choose(b.dataset.id)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')picker.classList.remove('open')});
+})();
+</script>
+</body></html>
